@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sección Reseñas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #fdf0f5 0%, #f9eaf4 50%, #f3eaf8 100%);
+      min-height: 100vh;
+    }
+
+    .section-resenas {
+      width: 100%;
+      padding: 60px 0;
+    }
+
+    .section-resenas__inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .resenas-eyebrow {
+      display: block;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #e05588;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .resenas-titulo {
+      text-align: center;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .resenas-estrellas-global {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #f5a623;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+
+    .resenas-subtitulo {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7a6a7a;
+      margin-bottom: 36px;
+    }
+
+    .resenas-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .resena-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 20px;
+      box-shadow: 0 2px 16px rgba(180, 100, 150, 0.08);
+    }
+
+    .resena-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .resena-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f4b8cc 0%, #dba8d8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .resena-info__nombre {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .resena-info__lugar {
+      font-size: 0.8rem;
+      color: #9a8a9a;
+      margin-top: 1px;
+    }
+
+    .resena-verificada {
+      font-size: 0.75rem;
+      color: #3aaa6a;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .resena-estrellas {
+      font-size: 1.1rem;
+      color: #f5a623;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .resena-texto {
+      font-size: 0.9rem;
+      color: #3a2a3a;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section-resenas">
+    <div class="section-resenas__inner">
+
+      <span class="resenas-eyebrow">Opiniones reales</span>
+      <h2 class="resenas-titulo">Lo que dicen nuestras tejedoras</h2>
+      <div class="resenas-estrellas-global">★★★★★</div>
+      <p class="resenas-subtitulo">Basado en más de 1.200 reseñas verificadas</p>
+
+      <div class="resenas-lista">
+
+        <div class="resena-card">
+          <div class="resena-header">
+            <div class="resena-avatar">ML</div>
+            <div class="resena-info">
+              <div class="resena-info__nombre">María Laura P.</div>
+              <div class="resena-info__lugar">Rosario, Santa Fe</div>
+              <div class="resena-verificada">✓ Compra verificada</div>
+            </div>
+          </div>
+          <div class="resena-estrellas">★★★★★</div>
+          <p class="resena-texto">Me encantó tener todo organizado en un solo lugar. Antes perdía horas buscando patrones y ahora directamente elijo qué quiero tejer y empiezo.</p>
+        </div>
+
+        <div class="resena-card">
+          <div class="resena-header">
+            <div class="resena-avatar">CV</div>
+            <div class="resena-info">
+              <div class="resena-info__nombre">Carolina V.</div>
+              <div class="resena-info__lugar">Córdoba Capital</div>
+              <div class="resena-verificada">✓ Compra verificada</div>
+            </div>
+          </div>
+          <div class="resena-estrellas">★★★★★</div>
+          <p class="resena-texto">Hay muchísima variedad. Ya hice un amigurumi y una blusa para mi hija. Me gustó que no es solo una guía, es como una <strong>biblioteca completa</strong>.</p>
+        </div>
+
+        <div class="resena-card">
+          <div class="resena-header">
+            <div class="resena-avatar">NP</div>
+            <div class="resena-info">
+              <div class="resena-info__nombre">Natalia P.</div>
+              <div class="resena-info__lugar">Mar del Plata, Buenos Aires</div>
+              <div class="resena-verificada">✓ Compra verificada</div>
+            </div>
+          </div>
+          <div class="resena-estrellas">★★★★★</div>
+          <p class="resena-texto">Lo compré porque quería ideas nuevas para vender. Los patrones de bolsos y deco hogar me dieron un montón de inspiración.</p>
+        </div>
+
+        <div class="resena-card">
+          <div class="resena-header">
+            <div class="resena-avatar">AG</div>
+            <div class="resena-info">
+              <div class="resena-info__nombre">Andrea G.</div>
+              <div class="resena-info__lugar">Mendoza Capital</div>
+              <div class="resena-verificada">✓ Compra verificada</div>
+            </div>
+          </div>
+          <div class="resena-estrellas">★★★★★</div>
+          <p class="resena-texto">Soy principiante y me sirvió mucho para dejar de sentirme perdida. Tener tantos modelos juntos hace que siempre tenga algo nuevo para probar.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
