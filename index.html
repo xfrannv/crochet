@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sección Imagen Full Width</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #fff5f0 0%, #fde8f0 40%, #ede8f8 100%);
+      min-height: 100vh;
+    }
+
+    /* ── SECCIÓN IMAGEN FULL WIDTH ── */
+    .section-imagen {
+      width: 100%;
+      padding: 48px 0;
+    }
+
+    .section-imagen__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-imagen__titulo {
+      text-align: center;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 700;
+      color: #3a2a4d;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Contenedor que mantiene relación 4:3 */
+    .imagen-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
+      box-shadow: 0 8px 40px rgba(180, 120, 160, 0.18);
+    }
+
+    /* Imagen real (cuando se sube) */
+    .imagen-wrapper img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Estado vacío — zona de upload */
+    .upload-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .upload-placeholder:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .upload-placeholder__icono {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(180, 120, 160, 0.2);
+    }
+
+    .upload-placeholder__icono svg {
+      width: 32px;
+      height: 32px;
+      color: #c06090;
+    }
+
+    .upload-placeholder__texto {
+      text-align: center;
+    }
+
+    .upload-placeholder__texto strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #3a2a4d;
+      margin-bottom: 4px;
+    }
+
+    .upload-placeholder__texto span {
+      font-size: 0.85rem;
+      color: #8a6a8a;
+    }
+
+    .upload-placeholder__btn {
+      margin-top: 4px;
+      padding: 10px 28px;
+      background: linear-gradient(135deg, #e8608a 0%, #c04878 100%);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(192, 72, 120, 0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .upload-placeholder__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(192, 72, 120, 0.45);
+    }
+
+    /* Input file oculto */
+    #file-input {
+      display: none;
+    }
+
+    /* Badge de formato */
+    .imagen-badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 14px;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(192, 72, 120, 0.2);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      color: #8a6a8a;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       SECCIÓN: IMAGEN FULL WIDTH (4:3)
+       ══════════════════════════════════ -->
+  <section class="section-imagen">
+    <div class="section-imagen__inner">
+
+      <h2 class="section-imagen__titulo">
+        <!-- Reemplazá este título por el tuyo -->
+        Lo que vas a lograr 🧶
+      </h2>
+
+      <div class="imagen-wrapper" id="imagen-wrapper">
+
+        <!-- Imagen (se muestra al subir) -->
+        <img id="preview-img" src="" alt="Imagen de sección" style="display:none;" />
+
+        <!-- Placeholder de upload -->
+        <div class="upload-placeholder" id="upload-zone" onclick="document.getElementById('file-input').click()">
+          <div class="upload-placeholder__icono">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+            </svg>
+          </div>
+          <div class="upload-placeholder__texto">
+            <strong>Subí tu imagen aquí</strong>
+            <span>Formato recomendado: 4:3 (ej: 1200×900 px)</span>
+          </div>
+          <button class="upload-placeholder__btn" type="button">Elegir imagen</button>
+        </div>
+
+        <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)" />
+      </div>
+
+      <div style="text-align:center;">
+        <span class="imagen-badge">📐 Relación de aspecto 4:3 · Ancho completo</span>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function previewImage(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.getElementById('preview-img');
+        img.src = e.target.result;
+        img.style.display = 'block';
+        document.getElementById('upload-zone').style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+
+</body>
+</html>
