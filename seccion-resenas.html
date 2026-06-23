@@ -94,6 +94,14 @@
       font-weight: 700;
       color: #fff;
       flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .resena-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .resena-info__nombre {
@@ -143,7 +151,11 @@
 
         <div class="resena-card">
           <div class="resena-header">
-            <div class="resena-avatar">ML</div>
+            <div class="resena-avatar">
+              <!-- Reemplazá foto-1.jpg con la imagen real; si no tenés foto, borrá el <img> y dejá solo las iniciales -->
+              <img src="foto-1.jpg" alt="María Laura P." onerror="this.style.display='none'" />
+              ML
+            </div>
             <div class="resena-info">
               <div class="resena-info__nombre">María Laura P.</div>
               <div class="resena-info__lugar">Rosario, Santa Fe</div>
@@ -156,7 +168,10 @@
 
         <div class="resena-card">
           <div class="resena-header">
-            <div class="resena-avatar">CV</div>
+            <div class="resena-avatar">
+              <img src="foto-2.jpg" alt="Carolina V." onerror="this.style.display='none'" />
+              CV
+            </div>
             <div class="resena-info">
               <div class="resena-info__nombre">Carolina V.</div>
               <div class="resena-info__lugar">Córdoba Capital</div>
@@ -169,7 +184,10 @@
 
         <div class="resena-card">
           <div class="resena-header">
-            <div class="resena-avatar">NP</div>
+            <div class="resena-avatar">
+              <img src="foto-3.jpg" alt="Natalia P." onerror="this.style.display='none'" />
+              NP
+            </div>
             <div class="resena-info">
               <div class="resena-info__nombre">Natalia P.</div>
               <div class="resena-info__lugar">Mar del Plata, Buenos Aires</div>
@@ -182,7 +200,10 @@
 
         <div class="resena-card">
           <div class="resena-header">
-            <div class="resena-avatar">AG</div>
+            <div class="resena-avatar">
+              <img src="foto-4.jpg" alt="Andrea G." onerror="this.style.display='none'" />
+              AG
+            </div>
             <div class="resena-info">
               <div class="resena-info__nombre">Andrea G.</div>
               <div class="resena-info__lugar">Mendoza Capital</div>
