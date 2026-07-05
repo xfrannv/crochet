@@ -46,18 +46,22 @@
       overflow: hidden;
       border-radius: 20px;
       box-shadow: 0 8px 40px rgba(180, 120, 160, 0.18);
+      transform: translateZ(0);
     }
 
     .carousel__track {
       display: flex;
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
     }
 
     .carousel__slide {
       flex: 0 0 100%;
+      min-width: 100%;
       position: relative;
       aspect-ratio: 3 / 4;
       background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
+      backface-visibility: hidden;
     }
 
     .carousel__slide img {
@@ -67,6 +71,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      backface-visibility: hidden;
     }
 
     .carousel__btn {
