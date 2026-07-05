@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sección Imagen 9:16</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #fff5f0 0%, #fde8f0 40%, #ede8f8 100%);
+      min-height: 100vh;
+    }
+
+    .section-imagen {
+      width: 100%;
+      padding: 48px 0;
+    }
+
+    .section-imagen__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-imagen__titulo {
+      text-align: center;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 700;
+      color: #3a2a4d;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    /* padding-bottom para relación 9:16 (altura = ancho × 16/9 = 177.78%) */
+    .imagen-stage {
+      position: relative;
+      width: 100%;
+      padding-bottom: 177.78%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #ede7f6 100%);
+      box-shadow: 0 8px 40px rgba(180, 120, 160, 0.18);
+    }
+
+    .imagen-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .imagen-badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 14px;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(192, 72, 120, 0.2);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      color: #8a6a8a;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section-imagen">
+    <div class="section-imagen__inner">
+
+      <h2 class="section-imagen__titulo">
+        <!-- Reemplazá este título por el tuyo -->
+        Lo que vas a lograr 🧶
+      </h2>
+
+      <div class="imagen-stage">
+        <img src="tu-imagen.jpg" alt="Imagen de sección" />
+      </div>
+
+      <div style="text-align:center;">
+        <span class="imagen-badge">📐 Relación de aspecto 9:16 · Ancho completo</span>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
